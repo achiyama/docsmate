@@ -1,8 +1,8 @@
-<mat-form-field appearance="outline">
+<mat-form-field appearance="outline" class="max-width">
   <mat-label>{{ labelName }}</mat-label>
   <mat-select>
-    <mat-option *ngFor="let language of languages" [value]="language.value">
-      {{ language.value }}
+    <mat-option *ngFor="let language of languages" [value]="language.name">
+      {{ language.name }}
     </mat-option>
   </mat-select>
 </mat-form-field>

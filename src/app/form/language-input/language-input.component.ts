@@ -1,9 +1,5 @@
 import { Component, Input } from '@angular/core';
-
-interface Language {
-  key: number;
-  value: string;
-}
+import { Language } from 'src/app/interfaces/language';
 
 @Component({
   selector: 'app-language-input',
@@ -12,9 +8,5 @@ interface Language {
 })
 export class LanguageInputComponent {
   @Input() labelName!: string;
-
-  languages: Language[] = [
-    { key: 0, value: '日本語' },
-    { key: 1, value: 'English-US' },
-  ];
+  @Input() languages!: Language[];
 }

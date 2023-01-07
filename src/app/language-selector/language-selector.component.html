@@ -1,3 +1,11 @@
-<app-language-input [labelName]="'FROM'"></app-language-input>
-<app-language-input [labelName]="'TO'"></app-language-input>
-<app-change-button></app-change-button>
+<app-language-input
+  [labelName]="'FROM'"
+  [languages]="languages"
+></app-language-input>
+<app-language-input
+  [labelName]="'TO'"
+  [languages]="languages"
+></app-language-input>
+<br />
+<app-change-button class="max-width"></app-change-button>
+<button (click)="onSwitch()">切り替え</button>
