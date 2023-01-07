@@ -6,14 +6,18 @@ import { AppComponent } from './app.component';
 import { LanguageInputComponent } from './form/language-input/language-input.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSelectModule } from '@angular/material/select';
+import { ChangeButtonComponent } from './form/change-button/change-button.component';
+import { MatButtonModule } from '@angular/material/button';
+import { LanguageSelectorComponent } from './language-selector/language-selector.component';
 
 @NgModule({
-  declarations: [AppComponent, LanguageInputComponent],
+  declarations: [AppComponent, LanguageInputComponent, ChangeButtonComponent, LanguageSelectorComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSelectModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

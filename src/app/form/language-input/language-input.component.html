@@ -1,1 +1,8 @@
-<p>language-input works!</p>
+<mat-form-field appearance="outline">
+  <mat-label>{{ labelName }}</mat-label>
+  <mat-select>
+    <mat-option *ngFor="let language of languages" [value]="language.value">
+      {{ language.value }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
