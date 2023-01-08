@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Doc } from '../interfaces/doc';
+import { Language } from '../interfaces/language';
 import { DocumentUrl } from '../models/document-url';
 import { BrowserService } from './browser.service';
 
@@ -61,30 +62,15 @@ export class DocumentationService {
   }
 
   /**
-   * 言語を変更する
-   * @param id 言語ID
+   * 言語に対応するドキュメントのURLを取得する
+   * @param language 言語
    */
-  switchLanguage(id: number) {
-    const language = this.currentDoc?.languages.find(
-      (language) => language.id == id
+  getDocumentUrl(language: Language) {
+    return new DocumentUrl(
+      this.currentUrl
+        ?.toString()
+        .replace(new RegExp(this.currentDoc!.regex), language!.path)!
     );
-
-    console.warn(this.currentUrl?.toString());
-    console.warn(this.currentDoc);
-    console.warn(language);
-
-    const newUrl = this.currentUrl
-      ?.toString()
-      .replace(new RegExp(this.currentDoc!.regex), language!.path);
-
-    console.log(newUrl);
-
-    // this.currentUrl = new URL(newUrl!);
-
-    // chrome.tabs.create({
-    //   url: newUrl,
-    // });
-
-    chrome.tabs.update({ url: newUrl });
+    // chrome.tabs.update({ url: newUrl });
   }
 }

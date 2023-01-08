@@ -9,15 +9,22 @@ import { MatSelectModule } from '@angular/material/select';
 import { ChangeButtonComponent } from './form/change-button/change-button.component';
 import { MatButtonModule } from '@angular/material/button';
 import { LanguageSelectorComponent } from './language-selector/language-selector.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent, LanguageInputComponent, ChangeButtonComponent, LanguageSelectorComponent],
+  declarations: [
+    AppComponent,
+    LanguageInputComponent,
+    ChangeButtonComponent,
+    LanguageSelectorComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSelectModule,
     MatButtonModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

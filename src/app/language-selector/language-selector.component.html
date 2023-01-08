@@ -1,11 +1,18 @@
 <app-language-input
-  [labelName]="'FROM'"
+  [labelName]="'LANGUAGE'"
   [languages]="languages"
-></app-language-input>
-<app-language-input
-  [labelName]="'TO'"
-  [languages]="languages"
+  (formReady)="formInitialized('language', $event)"
 ></app-language-input>
 <br />
-<app-change-button class="max-width"></app-change-button>
-<button (click)="onSwitch()">切り替え</button>
+<button mat-flat-button color="primary" (click)="onSwitch('CurrentTab')">
+  CurrentTab
+</button>
+<br />
+<button mat-flat-button color="primary" (click)="onSwitch('NewTab')">
+  New Tab
+</button>
+<br />
+<button mat-flat-button color="primary" (click)="onSwitch('NewWindow')">
+  New Window
+</button>
+<br />

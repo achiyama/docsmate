@@ -1,12 +1,18 @@
 {
   "manifest_version": 3,
   "name": "docsmate",
-  "description": "Docs language changer",
-  "version": "1.0",
+  "description": "開発者ドキュメントの言語切替が簡単にできます。",
+  "version": "0.1.0",
   "action": {
     "default_popup": "index.html"
   },
   "permissions": [
     "tabs"
-  ]
+  ],
+  "icons": {
+    "16": "./assets/icon16.ico",
+    "38": "./assets/icon38.ico",
+    "48": "./assets/icon48.ico",
+    "64": "./assets/icon64.ico"
+  }
 }

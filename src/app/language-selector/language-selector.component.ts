@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AbstractControl, FormGroup } from '@angular/forms';
 import { Language } from '../interfaces/language';
+import { BrowserService } from '../services/browser.service';
 import { DocumentationService } from '../services/documentation.service';
 
 @Component({
@@ -8,24 +10,33 @@ import { DocumentationService } from '../services/documentation.service';
   styleUrls: ['./language-selector.component.scss'],
 })
 export class LanguageSelectorComponent implements OnInit {
-  tab: chrome.tabs.Tab | undefined;
+  formGroup: FormGroup = new FormGroup({});
   /**
    * 対応言語
    */
   languages: Language[] = [];
 
-  constructor(private docService: DocumentationService) {}
+  constructor(
+    private _docService: DocumentationService,
+    private _browserService: BrowserService
+  ) {}
 
   async ngOnInit() {
-    await this.docService.search();
-    this.languages = this.docService.supportedLanguages;
+    await this._docService.search();
+    this.languages = this._docService.supportedLanguages;
+  }
+
+  formInitialized(name: string, form: AbstractControl) {
+    this.formGroup.setControl(name, form);
   }
 
   /**
    * 言語を変更する
+   * @param openType 開き方
    */
-  onSwitch() {
-    // 現在は日本語切り替え固定
-    this.docService.switchLanguage(2);
+  onSwitch(openType: 'CurrentTab' | 'NewTab' | 'NewWindow') {
+    const selected = this.formGroup.get('language')?.value as Language;
+    const newUrl = this._docService.getDocumentUrl(selected);
+    this._browserService.open(openType, newUrl);
   }
 }
