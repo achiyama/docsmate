@@ -1,3 +1,5 @@
+{: align="center"}
+![DocsMate_Logo](https://user-images.githubusercontent.com/22658057/211189053-d2eed269-0302-479d-b738-ca81dfaaa990.png)
 # DocsMate : A document language switcher for developers.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.0.
