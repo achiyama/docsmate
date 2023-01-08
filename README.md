@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/22658057/211189053-d2eed269-0302-479d-b738-ca81dfaaa990.png" />
+  <img src="https://user-images.githubusercontent.com/22658057/211189503-5dd364d0-3e6e-4952-ad47-5d26194e33d3.png" />
 </p>
 
 # DocsMate : A document language switcher for developers.
