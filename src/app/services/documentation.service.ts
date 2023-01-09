@@ -27,11 +27,31 @@ export class DocumentationService {
       languages: [
         {
           id: 1,
+          name: 'Bahasa Indonesia',
+          path: 'id-id',
+        },
+        {
+          id: 2,
+          name: 'Bahasa Melayu',
+          path: 'ms-my',
+        },
+        {
+          id: 3,
+          name: 'Bosanski',
+          path: 'bs-latn-ba',
+        },
+        {
+          id: 4,
+          name: 'Català',
+          path: 'ca-es',
+        },
+        {
+          id: 5,
           name: '日本語',
           path: 'ja-jp',
         },
         {
-          id: 2,
+          id: 6,
           name: 'English (United States)',
           path: 'en-us',
         },
@@ -54,11 +74,11 @@ export class DocumentationService {
    */
   async search() {
     const url = await this.urlService.getCurrentUrl();
-    if (!url) return;
+    if (!url) return undefined;
     this.currentUrl = new DocumentUrl(url);
-    this.currentDoc = this.docs.find((doc) =>
+    return (this.currentDoc = this.docs.find((doc) =>
       this.currentUrl!.isSameHost(doc.hostName)
-    );
+    ));
   }
 
   /**
@@ -71,6 +91,5 @@ export class DocumentationService {
         ?.toString()
         .replace(new RegExp(this.currentDoc!.regex), language!.path)!
     );
-    // chrome.tabs.update({ url: newUrl });
   }
 }

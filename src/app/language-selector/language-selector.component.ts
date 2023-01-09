@@ -12,6 +12,10 @@ import { DocumentationService } from '../services/documentation.service';
 export class LanguageSelectorComponent implements OnInit {
   formGroup: FormGroup = new FormGroup({});
   /**
+   * 対応済みサイトかどか
+   */
+  isValidSite: boolean = false;
+  /**
    * 対応言語
    */
   languages: Language[] = [];
@@ -22,7 +26,8 @@ export class LanguageSelectorComponent implements OnInit {
   ) {}
 
   async ngOnInit() {
-    await this._docService.search();
+    const doc = await this._docService.search();
+    this.isValidSite = !!doc;
     this.languages = this._docService.supportedLanguages;
   }
 

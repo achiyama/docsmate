@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "docsmate",
+  "name": "DocsMate",
   "description": "開発者ドキュメントの言語切替が簡単にできます。",
   "version": "0.1.0",
   "action": {

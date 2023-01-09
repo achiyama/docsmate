@@ -26,7 +26,14 @@ export class LanguageInputComponent implements OnInit {
   /**
    * フォーム
    */
-  form = new FormControl<Language>(this.languages[0], [Validators.required]);
+  form: FormControl<Language>;
+
+  constructor() {
+    this.form = new FormControl<Language>(this.languages[0], {
+      nonNullable: true,
+      validators: [Validators.required],
+    });
+  }
 
   ngOnInit(): void {
     this.formReady.emit(this.form);

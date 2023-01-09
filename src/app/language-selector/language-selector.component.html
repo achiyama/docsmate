@@ -1,18 +1,38 @@
-<app-language-input
-  [labelName]="'LANGUAGE'"
-  [languages]="languages"
-  (formReady)="formInitialized('language', $event)"
-></app-language-input>
-<br />
-<button mat-flat-button color="primary" (click)="onSwitch('CurrentTab')">
-  CurrentTab
-</button>
-<br />
-<button mat-flat-button color="primary" (click)="onSwitch('NewTab')">
-  New Tab
-</button>
-<br />
-<button mat-flat-button color="primary" (click)="onSwitch('NewWindow')">
-  New Window
-</button>
-<br />
+<div *ngIf="isValidSite; else elseContent">
+  <app-language-input
+    [labelName]="'LANGUAGE'"
+    [languages]="languages"
+    (formReady)="formInitialized('language', $event)"
+  ></app-language-input>
+  <br />
+  <button
+    mat-flat-button
+    color="primary"
+    class="full-width button"
+    (click)="onSwitch('CurrentTab')"
+  >
+    CurrentTab
+  </button>
+  <br />
+  <button
+    mat-flat-button
+    color="primary"
+    class="full-width button"
+    (click)="onSwitch('NewTab')"
+  >
+    New Tab
+  </button>
+  <br />
+  <button
+    mat-flat-button
+    color="primary"
+    class="full-width button"
+    (click)="onSwitch('NewWindow')"
+  >
+    New Window
+  </button>
+  <br />
+</div>
+<ng-template #elseContent>
+  <h3>This Page is Not Supported.</h3>
+</ng-template>
