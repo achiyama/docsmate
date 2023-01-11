@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormGroup } from '@angular/forms';
-import { Language } from '../interfaces/language';
-import { BrowserService } from '../services/browser.service';
-import { DocumentationService } from '../services/documentation.service';
+import { Language } from '../../../interfaces/language';
+import { BrowserService } from '../../../services/browser.service';
+import { DocumentationService } from '../../../services/documentation.service';
 
 @Component({
   selector: 'app-language-selector',
