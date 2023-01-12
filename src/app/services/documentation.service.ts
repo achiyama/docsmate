@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Document } from '../documents/shared/document.model';
+import { LocalizedDocument } from '../documents/shared/localized-document.model';
 import { Doc } from '../interfaces/doc';
 import { Language } from '../interfaces/language';
 import { DocumentUrl } from '../models/document-url';
@@ -58,6 +60,13 @@ export class DocumentationService {
       ],
     },
   ];
+
+  documents: Document = new Document('Microsoft Learn', 'learn.microsoft.com', [
+    // prettier-ignore
+    new LocalizedDocument('English (United States)', 'learn.microsoft.com', '(?<=learn.microsoft.com/).+?(?=\/)', 'en-us'),
+    // prettier-ignore
+    new LocalizedDocument('日本語', 'learn.microsoft.com', '(?<=learn.microsoft.com/).+?(?=\/)', 'ja-jp'),
+  ]);
 
   constructor(private urlService: BrowserService) {}
 

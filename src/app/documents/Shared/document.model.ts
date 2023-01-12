@@ -1,10 +1,9 @@
-import { Language } from 'src/app/languages/shared/language.model';
-import { Entity } from 'src/app/shared/entity.base';
+import { LocalizedDocument } from 'src/app/documents/shared/localized-document.model';
 
 /**
  * ドキュメントモデル
  */
-export class Document extends Entity {
+export class Document {
   /**
    * ドキュメント名
    */
@@ -16,17 +15,11 @@ export class Document extends Entity {
   private _hostName: string;
 
   /**
-   * 対応言語
+   * ローカライズドキュメント
    */
-  private _languages: Language[];
+  private _languages: LocalizedDocument[];
 
-  constructor(
-    id: number,
-    name: string,
-    hostName: string,
-    languages: Language[]
-  ) {
-    super(id);
+  constructor(name: string, hostName: string, languages: LocalizedDocument[]) {
     this._name = name;
     this._hostName = hostName;
     this._languages = languages;
@@ -48,11 +41,20 @@ export class Document extends Entity {
     this._hostName = value;
   }
 
-  public get languages(): Language[] {
+  public get languages(): LocalizedDocument[] {
     return this._languages;
   }
 
-  public set languages(value: Language[]) {
+  public set languages(value: LocalizedDocument[]) {
     this._languages = value;
+  }
+
+  /**
+   * 同一のホスト名かどうかを返す
+   * @param hostName ホスト名
+   * @returns
+   */
+  isSameHost(hostName: string): boolean {
+    return this._hostName == hostName;
   }
 }

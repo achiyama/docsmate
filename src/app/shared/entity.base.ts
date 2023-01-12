@@ -1,6 +1,3 @@
-/**
- * Entity Base
- */
 export abstract class Entity {
   private _id: number;
 
