@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { AbstractControl, FormControl, Validators } from '@angular/forms';
 import { LocalizedDocument } from 'src/app/documents/shared/localized-document.model';
-import { Language } from 'src/app/interfaces/language';
 
 @Component({
   selector: 'app-language-input',

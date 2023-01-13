@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormGroup } from '@angular/forms';
 import { LocalizedDocument } from 'src/app/documents/shared/localized-document.model';
-import { Language } from '../../../interfaces/language';
 import { BrowserService } from '../../../services/browser.service';
 import { DocumentService } from '../../../services/documentation.service';
 
