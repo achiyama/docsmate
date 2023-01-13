@@ -45,6 +45,6 @@ export class LanguageSelectorComponent implements OnInit {
     const selected = this.formGroup.get('localizedDocument')
       ?.value as LocalizedDocument;
     const newUrl = this._documentService.getDocumentUrl(selected);
-    this._browserService.open(openType, newUrl);
+    this._browserService.open(openType, newUrl!);
   }
 }

@@ -41,7 +41,10 @@ export class DocumentService {
    */
   async search() {
     const url = await this._browserService.getCurrentUrl();
-    if (!url) return;
+    if (!url) {
+      this._resetDocument();
+      return;
+    }
     this.currentUrl = new DocumentURL(url);
 
     const localized = documents
@@ -51,9 +54,16 @@ export class DocumentService {
           localizedDocument,
         }))
       )
-      .find((flatDocument) =>
-        this.currentUrl?.isSameHost(flatDocument.localizedDocument.hostName)
-      );
+      .find((flatDocument) => {
+        return this.currentUrl?.isSameHost(
+          flatDocument.localizedDocument.hostName
+        );
+      });
+
+    if (!localized) {
+      this._resetDocument();
+      return;
+    }
 
     this.currentDocument = documents[localized?.documentIndex!];
     this.currentLocalizedDocument = localized?.localizedDocument;
@@ -73,5 +83,14 @@ export class DocumentService {
           document!.replacementString
         )
     );
+  }
+
+  /**
+   * 現在のドキュメントをリセットする
+   */
+  private _resetDocument() {
+    this.currentUrl = undefined;
+    this.currentDocument = undefined;
+    this.currentLocalizedDocument = undefined;
   }
 }
