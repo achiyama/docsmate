@@ -1,10 +1,5 @@
-export class DocumentUrl extends URL {
-  /**
-   * 同一のホスト名かどうかを返す
-   * @param hostName ホスト名
-   * @returns
-   */
-  isSameHost(hostName: string): boolean {
+export class DocumentURL extends URL {
+  isSameHost(hostName: string) {
     return this.hostname == hostName;
   }
 }

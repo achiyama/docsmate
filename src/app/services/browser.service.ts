@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { DocumentUrl } from '../models/document-url';
+import { DocumentURL } from '../models/document-url';
 
 @Injectable({
   providedIn: 'root',
@@ -20,7 +20,12 @@ export class BrowserService {
     )[0].url;
   }
 
-  open(openType: 'CurrentTab' | 'NewTab' | 'NewWindow', url: DocumentUrl) {
+  /**
+   * 新しいページを開く
+   * @param openType
+   * @param url
+   */
+  open(openType: 'CurrentTab' | 'NewTab' | 'NewWindow', url: DocumentURL) {
     switch (openType) {
       case 'CurrentTab':
         chrome.tabs.update({ url: url.toString() });

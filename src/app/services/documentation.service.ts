@@ -1,71 +1,38 @@
 import { Injectable } from '@angular/core';
+import { documents } from '../database/database';
+import { Document } from '../documents/shared/document.model';
+import { LocalizedDocument } from '../documents/shared/localized-document.model';
 import { Doc } from '../interfaces/doc';
 import { Language } from '../interfaces/language';
-import { DocumentUrl } from '../models/document-url';
+import { DocumentURL } from '../models/document-url';
 import { BrowserService } from './browser.service';
 
 @Injectable({
   providedIn: 'root',
 })
-export class DocumentationService {
+export class DocumentService {
   /**
    * 現在のページのURL
    */
-  currentUrl: DocumentUrl | undefined;
+  currentUrl: DocumentURL | undefined;
 
   /**
-   * 現在開いているページのドキュメント
+   * 現在開いているドキュメント
    */
-  currentDoc: Doc | undefined;
-
-  docs: Doc[] = [
-    {
-      name: 'Microsoft Learn',
-      hostName: 'learn.microsoft.com',
-      // prettier-ignore
-      regex: '(?<=learn.microsoft.com/).+?(?=\/)',
-      languages: [
-        {
-          id: 1,
-          name: 'Bahasa Indonesia',
-          path: 'id-id',
-        },
-        {
-          id: 2,
-          name: 'Bahasa Melayu',
-          path: 'ms-my',
-        },
-        {
-          id: 3,
-          name: 'Bosanski',
-          path: 'bs-latn-ba',
-        },
-        {
-          id: 4,
-          name: 'Català',
-          path: 'ca-es',
-        },
-        {
-          id: 5,
-          name: '日本語',
-          path: 'ja-jp',
-        },
-        {
-          id: 6,
-          name: 'English (United States)',
-          path: 'en-us',
-        },
-      ],
-    },
-  ];
-
-  constructor(private urlService: BrowserService) {}
+  currentDocument: Document | undefined;
 
   /**
-   * 対応言語を返す
+   * 現在開いているローカライズドキュメント
    */
-  get supportedLanguages() {
-    return this.currentDoc ? this.currentDoc.languages : [];
+  currentLocalizedDocument: LocalizedDocument | undefined;
+
+  constructor(private _browserService: BrowserService) {}
+
+  /**
+   * ローカライズ対応言語を返す
+   */
+  get supportedLocalizedDocuments() {
+    return this.currentDocument ? this.currentDocument.localizedDocuments : [];
   }
 
   /**
@@ -73,23 +40,57 @@ export class DocumentationService {
    * @returns
    */
   async search() {
-    const url = await this.urlService.getCurrentUrl();
-    if (!url) return undefined;
-    this.currentUrl = new DocumentUrl(url);
-    return (this.currentDoc = this.docs.find((doc) =>
-      this.currentUrl!.isSameHost(doc.hostName)
-    ));
+    const url = await this._browserService.getCurrentUrl();
+    if (!url) {
+      this._resetDocument();
+      return;
+    }
+    this.currentUrl = new DocumentURL(url);
+
+    const localized = documents
+      .flatMap((document, index) =>
+        document.localizedDocuments.map((localizedDocument) => ({
+          documentIndex: index,
+          localizedDocument,
+        }))
+      )
+      .find((flatDocument) => {
+        return this.currentUrl?.isSameHost(
+          flatDocument.localizedDocument.hostName
+        );
+      });
+
+    if (!localized) {
+      this._resetDocument();
+      return;
+    }
+
+    this.currentDocument = documents[localized?.documentIndex!];
+    this.currentLocalizedDocument = localized?.localizedDocument;
   }
 
   /**
    * 言語に対応するドキュメントのURLを取得する
    * @param language 言語
    */
-  getDocumentUrl(language: Language) {
-    return new DocumentUrl(
+  getDocumentUrl(document: LocalizedDocument) {
+    if (!this.currentUrl) return;
+    return new DocumentURL(
       this.currentUrl
-        ?.toString()
-        .replace(new RegExp(this.currentDoc!.regex), language!.path)!
+        .toString()
+        .replace(
+          new RegExp(this.currentLocalizedDocument!.regex),
+          document!.replacementString
+        )
     );
+  }
+
+  /**
+   * 現在のドキュメントをリセットする
+   */
+  private _resetDocument() {
+    this.currentUrl = undefined;
+    this.currentDocument = undefined;
+    this.currentLocalizedDocument = undefined;
   }
 }
