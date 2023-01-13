@@ -2,9 +2,7 @@ import { Injectable } from '@angular/core';
 import { documents } from '../database/database';
 import { Document } from '../documents/shared/document.model';
 import { LocalizedDocument } from '../documents/shared/localized-document.model';
-import { Doc } from '../interfaces/doc';
-import { Language } from '../interfaces/language';
-import { DocumentURL } from '../models/document-url';
+import { DocumentURL } from '../documents/shared/document-url';
 import { BrowserService } from './browser.service';
 
 @Injectable({

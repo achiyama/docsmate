@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { DocumentURL } from '../models/document-url';
+import { DocumentURL } from '../documents/shared/document-url';
 
 @Injectable({
   providedIn: 'root',
