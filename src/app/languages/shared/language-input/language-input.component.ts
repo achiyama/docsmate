@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { AbstractControl, FormControl, Validators } from '@angular/forms';
+import { LocalizedDocument } from 'src/app/documents/shared/localized-document.model';
 import { Language } from 'src/app/interfaces/language';
 
 @Component({
@@ -14,9 +15,9 @@ export class LanguageInputComponent implements OnInit {
   @Input() labelName!: string;
 
   /**
-   * 言語一覧
+   * 対応言語ドキュメント
    */
-  @Input() languages: Language[] = [];
+  @Input() supportedLocalizedDocuments: LocalizedDocument[] = [];
 
   /**
    * 親コンポーネントにフォームをemitするための@output
@@ -26,13 +27,16 @@ export class LanguageInputComponent implements OnInit {
   /**
    * フォーム
    */
-  form: FormControl<Language>;
+  form: FormControl<LocalizedDocument>;
 
   constructor() {
-    this.form = new FormControl<Language>(this.languages[0], {
-      nonNullable: true,
-      validators: [Validators.required],
-    });
+    this.form = new FormControl<LocalizedDocument>(
+      this.supportedLocalizedDocuments[0],
+      {
+        nonNullable: true,
+        validators: [Validators.required],
+      }
+    );
   }
 
   ngOnInit(): void {

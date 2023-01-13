@@ -17,12 +17,16 @@ export class Document {
   /**
    * ローカライズドキュメント
    */
-  private _languages: LocalizedDocument[];
+  private _localizedDocuments: LocalizedDocument[];
 
-  constructor(name: string, hostName: string, languages: LocalizedDocument[]) {
+  constructor(
+    name: string,
+    hostName: string,
+    localizedDocuments: LocalizedDocument[]
+  ) {
     this._name = name;
     this._hostName = hostName;
-    this._languages = languages;
+    this._localizedDocuments = localizedDocuments;
   }
 
   public get name(): string {
@@ -41,12 +45,12 @@ export class Document {
     this._hostName = value;
   }
 
-  public get languages(): LocalizedDocument[] {
-    return this._languages;
+  public get localizedDocuments(): LocalizedDocument[] {
+    return this._localizedDocuments;
   }
 
-  public set languages(value: LocalizedDocument[]) {
-    this._languages = value;
+  public set localizedDocuments(value: LocalizedDocument[]) {
+    this._localizedDocuments = value;
   }
 
   /**

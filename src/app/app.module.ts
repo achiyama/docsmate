@@ -9,7 +9,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { LanguageSelectorComponent } from './languages/shared/language-selector/language-selector.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { StoreModule } from '@ngrx/store';
+// import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,7 @@ import { StoreModule } from '@ngrx/store';
     MatSelectModule,
     MatButtonModule,
     ReactiveFormsModule,
-    StoreModule.forRoot({}, {}),
+    // StoreModule.forRoot({}, {}),
   ],
   providers: [],
   bootstrap: [AppComponent],
