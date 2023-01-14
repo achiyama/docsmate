@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "DocsMate",
-  "description": "開発者ドキュメントの言語切替が簡単にできます。",
+  "description": "A document language switcher for developers.",
   "version": "0.1.0",
   "action": {
     "default_popup": "index.html"

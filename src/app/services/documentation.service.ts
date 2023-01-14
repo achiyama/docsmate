@@ -73,14 +73,7 @@ export class DocumentService {
    */
   getDocumentUrl(document: LocalizedDocument) {
     if (!this.currentUrl) return;
-    return new DocumentURL(
-      this.currentUrl
-        .toString()
-        .replace(
-          new RegExp(this.currentLocalizedDocument!.regex),
-          document!.replacementString
-        )
-    );
+    return this.currentUrl.convertUrl(document);
   }
 
   /**
