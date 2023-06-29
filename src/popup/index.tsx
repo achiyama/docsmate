@@ -2,6 +2,8 @@ import githubMark from "data-base64:~assets/github-mark.png"
 import twitterLogoBlue from "data-base64:~assets/twitter-logo-blue.png"
 import { useState } from "react"
 
+import Icon from "../components/images/icon"
+
 function IndexPopup() {
   const [data, setData] = useState("")
 
@@ -18,25 +20,12 @@ function IndexPopup() {
         <a href="https://docs.plasmo.com" target="_blank">
           View Docs
         </a>
-      </div>
-      <a target="_blank" href="https://github.com/achiyama/docsmate">
-        <img
-          src={githubMark}
-          style={{
-            width: 16,
-            height: 16,
-            marginRight: 8
-          }}></img>
-      </a>
-      <a target="_blank" href="https://twitter.com/achiy4ma">
-        <img
+        <Icon url="https://github.com/achiyama/docsmate" src={githubMark} />
+        <Icon
+          url="https://github.com/achiyama/docsmate"
           src={twitterLogoBlue}
-          style={{
-            width: 16,
-            height: 16,
-            marginRight: 8
-          }}></img>
-      </a>
+        />
+      </div>
     </>
   )
 }
