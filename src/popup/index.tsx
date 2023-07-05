@@ -23,7 +23,6 @@ function IndexPopup() {
         }}>
         <h2>DocsMate</h2>
         <input onChange={(e) => setData(e.target.value)} value={data} />
-        <input></input>
         <button onClick={hello}>変更する</button>
         <Icon url="https://github.com/achiyama/docsmate" src={githubMark} />
         <Icon
