@@ -7,10 +7,10 @@ export const SwitchButtons = () => {
         <SwitchButton name={"Current Tab"} type={1}></SwitchButton>
       </div>
       <div className="mb-1">
-        <SwitchButton name={"New Tab"} type={1}></SwitchButton>
+        <SwitchButton name={"New Tab"} type={2}></SwitchButton>
       </div>
       <div className="mb-1">
-        <SwitchButton name={"New Window"} type={1}></SwitchButton>
+        <SwitchButton name={"New Window"} type={3}></SwitchButton>
       </div>
     </>
   )
