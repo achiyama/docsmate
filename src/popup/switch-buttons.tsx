@@ -1,4 +1,4 @@
-import SwitchButton from "../common/switch-button"
+import SwitchButton from "../commons/switch-button"
 
 export const SwitchButtons = () => {
   return (
