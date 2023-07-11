@@ -19,7 +19,7 @@ export const SwitchButton = (props: { name: string; type: number }) => {
     <>
       <button
         onClick={open}
-        className="w-40 bg-blue-500 text-sm hover:bg-blue-700 text-white font-bold py-1 px-3 rounded">
+        className="w-40 bg-teal-500 text-sm hover:bg-teal-600 text-white font-bold py-1 px-3 rounded">
         {props.name}
       </button>
     </>

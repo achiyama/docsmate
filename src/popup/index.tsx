@@ -5,17 +5,14 @@ import { useState } from "react"
 import "../main.css"
 
 import Icon from "~components/images/icon"
+import { useTranslate } from "~hooks/useTranslate"
 
 import SwitchButtons from "./switch-buttons"
 
 function IndexPopup() {
   const [data, setData] = useState("")
 
-  // function hello() {
-  //   chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-  //     console.log(tabs[0].url)
-  //   })
-  // }
+  const translate = useTranslate()
 
   return (
     <>
@@ -31,6 +28,7 @@ function IndexPopup() {
           <Icon url="https://github.com/achiyama/docsmate" src={githubMark} />
           {/* <Icon url="https://twitter.com/achiy4ma" src={twitterLogoBlue} /> */}
         </div>
+        {translate}
       </div>
     </>
   )
