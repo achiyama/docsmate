@@ -1,6 +1,6 @@
 import githubMark from "data-base64:~assets/github-mark.png"
 import twitterLogoBlue from "data-base64:~assets/twitter-logo-blue.png"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 import "../main.css"
 
@@ -13,6 +13,12 @@ function IndexPopup() {
   const [data, setData] = useState("")
 
   const translate = useTranslate()
+  const [tmpTranslate, setTmpTranslate] = useState(translate);
+
+  useEffect(() => {
+    // tranclateが更新されたら表示内容を更新
+    setTmpTranslate(translate);
+  }, [translate])
 
   return (
     <>
@@ -28,7 +34,7 @@ function IndexPopup() {
           <Icon url="https://github.com/achiyama/docsmate" src={githubMark} />
           {/* <Icon url="https://twitter.com/achiy4ma" src={twitterLogoBlue} /> */}
         </div>
-        {translate}
+        {tmpTranslate}
       </div>
     </>
   )
