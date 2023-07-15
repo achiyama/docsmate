@@ -1,7 +1,7 @@
-import { useState } from "react"
+import { useState } from "react";
 
 function IndexOptions() {
-  const [data, setData] = useState("")
+  const [data, setData] = useState("");
 
   return (
     <div
@@ -22,7 +22,7 @@ function IndexOptions() {
         View Docs
       </a>
     </div>
-  )
+  );
 }
 
-export default IndexOptions
+export default IndexOptions;
