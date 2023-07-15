@@ -22,10 +22,9 @@ function IndexPopup() {
         </select>
         {/* <input onChange={(e) => setData(e.target.value)} value={data} /> */}
         {/* <button onClick={hello}>言語切替</button> */}
-        <SwitchButtons></SwitchButtons>
+        <SwitchButtons url={url}></SwitchButtons>
         <div className="flex">
           <Icon url="https://github.com/achiyama/docsmate" src={githubMark} />
-          {/* <Icon url="https://twitter.com/achiy4ma" src={twitterLogoBlue} /> */}
         </div>
         {url}
       </div>

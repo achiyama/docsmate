@@ -1,19 +1,25 @@
-import SwitchButton from "../commons/switch-button"
+import SwitchButton from "../commons/switch-button";
 
-export const SwitchButtons = () => {
+export const SwitchButtons = (props: { url: string }) => {
   return (
     <>
       <div className="mb-1">
-        <SwitchButton name={"Current Tab"} type={1}></SwitchButton>
+        <SwitchButton
+          name={"Current Tab"}
+          type={1}
+          url={props.url}></SwitchButton>
       </div>
       <div className="mb-1">
-        <SwitchButton name={"New Tab"} type={2}></SwitchButton>
+        <SwitchButton name={"New Tab"} type={2} url={props.url}></SwitchButton>
       </div>
       <div className="mb-1">
-        <SwitchButton name={"New Window"} type={3}></SwitchButton>
+        <SwitchButton
+          name={"New Window"}
+          type={3}
+          url={props.url}></SwitchButton>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default SwitchButtons
+export default SwitchButtons;

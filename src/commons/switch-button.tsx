@@ -1,14 +1,18 @@
-export const SwitchButton = (props: { name: string; type: number }) => {
+export const SwitchButton = (props: {
+  name: string;
+  type: number;
+  url: string;
+}) => {
   const open = () => {
     switch (props.type) {
       case 1:
-        chrome.tabs.update({ url: "https://www.google.com/" });
+        chrome.tabs.update({ url: props.url });
         break;
       case 2:
-        chrome.tabs.create({ url: "https://www.google.com/" });
+        chrome.tabs.create({ url: props.url });
         break;
       case 3:
-        chrome.windows.create({ url: "https://www.google.com/" });
+        chrome.windows.create({ url: props.url });
         break;
       default:
         break;
