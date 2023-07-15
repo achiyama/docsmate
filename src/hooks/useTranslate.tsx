@@ -9,7 +9,7 @@ export const useTranslate = () => {
         active: true,
         currentWindow: true
       });
-      const currentUrl = tabs[0].url;
+      const currentUrl = tabs[0].url!;
       setUrl(currentUrl);
     };
     getCurrentUrl();

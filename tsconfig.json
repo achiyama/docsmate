@@ -2,7 +2,9 @@
   "extends": "plasmo/templates/tsconfig.base",
   "exclude": ["node_modules"],
   "include": [".plasmo/index.d.ts", "./**/*.ts", "./**/*.tsx"],
+  "strict": true,
   "compilerOptions": {
+    "strict": true,
     "paths": {
       "~*": ["./src/*"]
     },
