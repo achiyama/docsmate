@@ -5,7 +5,7 @@ module.exports = {
   printWidth: 80,
   tabWidth: 2,
   useTabs: false,
-  semi: false,
+  semi: true,
   singleQuote: false,
   trailingComma: "none",
   bracketSpacing: true,
@@ -14,4 +14,4 @@ module.exports = {
   importOrder: ["^@plasmohq/(.*)$", "^~(.*)$", "^[./]"],
   importOrderSeparation: true,
   importOrderSortSpecifiers: true
-};
+}

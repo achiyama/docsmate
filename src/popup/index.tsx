@@ -1,24 +1,17 @@
-import githubMark from "data-base64:~assets/github-mark.png"
-import twitterLogoBlue from "data-base64:~assets/twitter-logo-blue.png"
-import { useEffect, useState } from "react"
+import githubMark from "data-base64:~assets/github-mark.png";
+import twitterLogoBlue from "data-base64:~assets/twitter-logo-blue.png";
+import { useEffect, useState } from "react";
 
-import "../main.css"
+import "../main.css";
 
-import Icon from "~components/images/icon"
-import { useTranslate } from "~hooks/useTranslate"
+import Icon from "~components/images/icon";
+import { useTranslate } from "~hooks/useTranslate";
 
-import SwitchButtons from "./switch-buttons"
+import SwitchButtons from "./switch-buttons";
 
 function IndexPopup() {
-  const [data, setData] = useState("")
-
-  const translate = useTranslate()
-  const [tmpTranslate, setTmpTranslate] = useState(translate);
-
-  useEffect(() => {
-    // tranclateが更新されたら表示内容を更新
-    setTmpTranslate(translate);
-  }, [translate])
+  const [data, setData] = useState("");
+  const url = useTranslate();
 
   return (
     <>
@@ -34,10 +27,10 @@ function IndexPopup() {
           <Icon url="https://github.com/achiyama/docsmate" src={githubMark} />
           {/* <Icon url="https://twitter.com/achiy4ma" src={twitterLogoBlue} /> */}
         </div>
-        {tmpTranslate}
+        {url}
       </div>
     </>
-  )
+  );
 }
 
-export default IndexPopup
+export default IndexPopup;

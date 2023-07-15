@@ -1,9 +1,19 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 
 export const useTranslate = () => {
-  const [count, setCount] = useState(0)
+  const [url, setUrl] = useState("");
 
-  console.log("useTranslate")
+  useEffect(() => {
+    const getCurrentUrl = async () => {
+      const tabs = await chrome.tabs.query({
+        active: true,
+        currentWindow: true
+      });
+      const currentUrl = tabs[0].url;
+      setUrl(currentUrl);
+    };
+    getCurrentUrl();
+  }, [url]);
 
-  return "hello"
-}
+  return url;
+};
