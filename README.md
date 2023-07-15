@@ -1,5 +1,9 @@
 This is a [Plasmo extension](https://docs.plasmo.com/) project bootstrapped with [`plasmo init`](https://www.npmjs.com/package/plasmo).
 
+## 環境構築
+本プロジェクトの実行には[fnm](https://github.com/Schniz/fnm)をおすすめします。
+___
+
 ## Getting Started
 
 First, run the development server:
