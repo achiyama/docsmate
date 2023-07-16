@@ -5,13 +5,15 @@ import { useEffect, useState } from "react";
 import "../main.css";
 
 import Icon from "~components/images/icon";
-import { useTranslate } from "~hooks/useTranslate";
+import { useGetCurrentPage } from "~hooks/getCurrentPage";
+import { useTranslatePage } from "~hooks/translatePage";
 
 import SwitchButtons from "./switch-buttons";
 
 function IndexPopup() {
   const [data, setData] = useState("");
-  const url = useTranslate();
+  const url = useGetCurrentPage();
+  const translatedUrl = useTranslatePage(url);
 
   return (
     <>

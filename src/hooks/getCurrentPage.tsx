@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react";
 
-export const useTranslate = () => {
-  const [url, setUrl] = useState("");
+/**
+ * 現在開いているぺージのURLを取得する
+ * @returns のURL
+ */
+export const useGetCurrentPage = () => {
+  const [url, setUrl] = useState<string>("");
 
   useEffect(() => {
     const getCurrentUrl = async () => {
