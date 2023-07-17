@@ -1,6 +1,6 @@
 import { useEffect, useRef, type RefObject } from 'react';
 
-type KeybindProps = {
+type ShortcutProps = {
   altKey?: boolean;
   ctrlKey?: boolean;
   metaKey?: boolean;
@@ -16,7 +16,7 @@ function useLatest<T>(value: T) {
   return ref;
 }
 
-export function useKeybind({
+export function useShortcut({
   altKey,
   ctrlKey,
   metaKey,
@@ -24,7 +24,7 @@ export function useKeybind({
   key,
   onKeyDown,
   targetRef,
-}: KeybindProps) {
+}: ShortcutProps) {
   const onKeyDownLatest = useLatest(onKeyDown);
   useEffect(() => {
     const eventListener = (event: KeyboardEvent) => {
