@@ -8,7 +8,11 @@ export class Hostname {
     this._value = value;
   }
 
-  isSame(url: string) {
+  get value() {
+    return this._value;
+  }
+
+  isSame(url: string | URL) {
     return new URL(url).hostname === this._value;
   }
 }

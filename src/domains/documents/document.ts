@@ -1,26 +1,23 @@
+import { Language } from "../languages/language";
 import type { Hostname } from "./urls/hostname";
 
 /**
- * ドキュメント
+ * ドキュメント基盤
  */
-export abstract class Document {
+export abstract class DocumentBase {
   /**
    * ドキュメント名
    */
   private _name: string;
 
-  /**
-   * ドキュメントホスト名
-   */
-  private _hostname: Hostname;
-
-  constructor(name: string, hostname: Hostname) {
+  constructor(name: string) {
     this._name = name;
-    this._hostname = hostname;
   }
 
   /**
    * 言語を切り替える
    */
-  abstract translate(): void;
+  abstract translate(language: Language): void;
+
+  abstract isSame(url: URL): boolean;
 }

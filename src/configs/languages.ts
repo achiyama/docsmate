@@ -1,68 +1,10 @@
-import { Language } from "~domains/languages/language";
+import type { Language } from "~domains/languages/language";
 
 export const languages: Language[] = [
-  new Language("en-us", "English (United States)"),
-  new Language("ja-jp", "日本語"),
-  new Language("zh-cn", "中文 (简体)"),
-  new Language("zh-tw", "中文 (繁體)"),
-  new Language("ko-kr", "한국어"),
-  new Language("fr-fr", "Français")
+  { id: "en-us", name: "English (United States)" },
+  { id: "ja-jp", name: "日本語" },
+  { id: "zh-cn", name: "中文 (简体)" },
+  { id: "zh-tw", name: "中文 (繁體)" },
+  { id: "ko-kr", name: "한국어" },
+  { id: "fr-fr", name: "Français" }
 ];
-
-/*
-import { LocalizedHostnameDocument } from "~domains/urls/localized-hostname-document.model";
-import { LocalizedRegexDocument } from "~domains/urls/localized-regex-document.model";
-
-import { Document } from "../domains/documents/document";
-
-export const documents: Document[] = [
-  new Document("Microsoft Learn", "learn.microsoft.com", [
-    new LocalizedRegexDocument(
-      "English (United States)",
-      "learn.microsoft.com",
-      "(?<=learn.microsoft.com/).+?(?=/)",
-      "en-us"
-    ),
-    new LocalizedRegexDocument(
-      "日本語",
-      "learn.microsoft.com",
-      "(?<=learn.microsoft.com/).+?(?=/)",
-      "ja-jp"
-    ),
-    new LocalizedRegexDocument(
-      "中文 (简体)",
-      "learn.microsoft.com",
-      "(?<=learn.microsoft.com/).+?(?=/)",
-      "zh-cn"
-    ),
-    new LocalizedRegexDocument(
-      "中文 (繁體)",
-      "learn.microsoft.com",
-      "(?<=learn.microsoft.com/).+?(?=/)",
-      "zh-tw"
-    ),
-    new LocalizedRegexDocument(
-      "한국어",
-      "learn.microsoft.com",
-      "(?<=learn.microsoft.com/).+?(?=/)",
-      "ko-kr"
-    ),
-    new LocalizedRegexDocument(
-      "Français",
-      "learn.microsoft.com",
-      "(?<=learn.microsoft.com/).+?(?=/)",
-      "fr-fr"
-    )
-  ]),
-  new Document("Angular", "angular.io", [
-    new LocalizedHostnameDocument("English", "angular.io"),
-    new LocalizedHostnameDocument("日本語", "angular.jp"),
-    new LocalizedHostnameDocument("한국어", "angular.kr"),
-    new LocalizedHostnameDocument("简体中文", "angular.cn"),
-    new LocalizedHostnameDocument("正體中文", "angular.tw"),
-    new LocalizedHostnameDocument("Español", "docs.angular.lat"),
-    new LocalizedHostnameDocument("Ελληνικά", "angular-gr.web.app")
-  ])
-];
-
-*/

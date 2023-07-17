@@ -1,18 +1,31 @@
-import { Document } from "./document";
+import type { Language } from "../languages/language";
+import { DocumentBase } from "./document";
+import type { RegexRule } from "./regex-rule";
 import type { Hostname } from "./urls/hostname";
 
-export class RegexDocument extends Document {
+export class RegexDocument extends DocumentBase {
   /**
-   * 正規表現
+   * 正規表現ルール
    */
-  private _regex: string;
+  private _rules: RegexRule[];
 
-  constructor(name: string, hostname: Hostname, regex: string) {
-    super(name, hostname);
-    this._regex = regex;
+  /**
+   * ホスト名
+   */
+  private _hostname: Hostname;
+
+  constructor(name: string, hostname: Hostname, rules: RegexRule[]) {
+    super(name);
+    this._hostname = hostname;
+    this._rules = rules;
   }
 
-  translate(): void {
-    throw new Error("Method not implemented.");
+  translate(language: Language): void {
+    // const rule = this._rules.find((rule) => rule.isSameLanguage(language));
+    // if (!rule) throw new Error("正規表現ルールが見つかりませんでした。");
+  }
+
+  isSame(url: URL): boolean {
+    return url.hostname === this._hostname.value;
   }
 }
