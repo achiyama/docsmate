@@ -17,7 +17,7 @@ export const useGetCurrentPage = () => {
       setUrl(currentUrl);
     };
     getCurrentUrl();
-  }, [url]);
+  }, []);
 
   return url;
 };

@@ -1,7 +1,19 @@
+import { Language } from "~domains/languages/language";
+
+export const languages: Language[] = [
+  new Language("en-us", "English (United States)"),
+  new Language("ja-jp", "日本語"),
+  new Language("zh-cn", "中文 (简体)"),
+  new Language("zh-tw", "中文 (繁體)"),
+  new Language("ko-kr", "한국어"),
+  new Language("fr-fr", "Français")
+];
+
+/*
 import { LocalizedHostnameDocument } from "~domains/urls/localized-hostname-document.model";
 import { LocalizedRegexDocument } from "~domains/urls/localized-regex-document.model";
 
-import { Document } from "./../domains/urls/document";
+import { Document } from "../domains/documents/document";
 
 export const documents: Document[] = [
   new Document("Microsoft Learn", "learn.microsoft.com", [
@@ -52,3 +64,5 @@ export const documents: Document[] = [
     new LocalizedHostnameDocument("Ελληνικά", "angular-gr.web.app")
   ])
 ];
+
+*/

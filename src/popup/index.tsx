@@ -13,7 +13,9 @@ import SwitchButtons from "./switch-buttons";
 function IndexPopup() {
   const [data, setData] = useState("");
   const url = useGetCurrentPage();
+  console.log(url);
   const translatedUrl = useTranslatePage(url);
+  console.log(translatedUrl);
 
   return (
     <>
@@ -24,11 +26,11 @@ function IndexPopup() {
         </select>
         {/* <input onChange={(e) => setData(e.target.value)} value={data} /> */}
         {/* <button onClick={hello}>言語切替</button> */}
-        <SwitchButtons url={url}></SwitchButtons>
+        <SwitchButtons url={"sa"}></SwitchButtons>
         <div className="flex">
           <Icon url="https://github.com/achiyama/docsmate" src={githubMark} />
         </div>
-        {url}
+        {/* {} */}
       </div>
     </>
   );
