@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { DocumentUrl } from "~domains/documents/document-url";
+import { DocumentUrl } from "~domains/documents/urls/document-url";
 
 /**
  * ページの言語を切り替える

@@ -1,4 +1,4 @@
-import type { Hostname } from "./hostname";
+import type { Hostname } from "./urls/hostname";
 
 /**
  * ドキュメント
@@ -12,11 +12,11 @@ export abstract class Document {
   /**
    * ドキュメントホスト名
    */
-  private _hostName: Hostname;
+  private _hostname: Hostname;
 
-  constructor(name: string, hostName: Hostname) {
+  constructor(name: string, hostname: Hostname) {
     this._name = name;
-    this._hostName = hostName;
+    this._hostname = hostname;
   }
 
   /**
