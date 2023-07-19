@@ -1,6 +1,4 @@
 import githubMark from "data-base64:~assets/github-mark.png";
-import twitterLogoBlue from "data-base64:~assets/twitter-logo-blue.png";
-import { useEffect, useState } from "react";
 
 import "../main.css";
 
@@ -11,7 +9,7 @@ import { useTranslatePage } from "~hooks/translatePage";
 import SwitchButtons from "./switch-buttons";
 
 function IndexPopup() {
-  const [data, setData] = useState("");
+  // const [data, setData] = useState("");
   const url = useGetCurrentPage();
   console.log(url);
   const translatedUrl = useTranslatePage(url);

@@ -1,5 +1,4 @@
-import { Language } from "../languages/language";
-import type { Hostname } from "./urls/hostname";
+import type { Language } from "~domains/languages/language";
 
 /**
  * ドキュメント基盤

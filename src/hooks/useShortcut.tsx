@@ -1,12 +1,12 @@
-import { useEffect, useRef, type RefObject } from 'react';
+import { type RefObject, useEffect, useRef } from "react";
 
 type ShortcutProps = {
   // ショートカットキーに特定のキーを含めるかどうか
   altKey?: boolean;
   ctrlKey?: boolean;
-  metaKey?: boolean;  // Win: Windows キー (⊞), Mac: command キー (⌘)
+  metaKey?: boolean; // Win: Windows キー (⊞), Mac: command キー (⌘)
   shiftKey?: boolean;
-  key: KeyboardEvent['key'];
+  key: KeyboardEvent["key"];
 
   // ショートカットキーを押した際の動作設定
   onKeyDown?: (event: KeyboardEvent) => void;
@@ -29,7 +29,7 @@ export function useShortcut({
   shiftKey,
   key,
   onKeyDown,
-  targetRef,
+  targetRef
 }: ShortcutProps) {
   // 最新のonKeyDown関数を参照する
   const onKeyDownLatest = useLatest(onKeyDown);
@@ -49,13 +49,13 @@ export function useShortcut({
     if (targetRef?.current) {
       // 特定のHTML要素にショートカットキーを割り当てる場合
       const target = targetRef.current;
-      target.addEventListener('keydown', eventListener);
+      target.addEventListener("keydown", eventListener);
       // アンマウント時にイベントリスナーを削除 (べき等性保証のため)
-      return () => target.removeEventListener('keydown', eventListener);
+      return () => target.removeEventListener("keydown", eventListener);
     } else {
       // targetRef未設定時はwindowオブジェクトに設定
-      window.addEventListener('keydown', eventListener);
-      return () => window.removeEventListener('keydown', eventListener);
+      window.addEventListener("keydown", eventListener);
+      return () => window.removeEventListener("keydown", eventListener);
     }
   }, [altKey, ctrlKey, key, metaKey, onKeyDownLatest, shiftKey, targetRef]);
 }

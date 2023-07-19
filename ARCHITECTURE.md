@@ -4,6 +4,5 @@ classDiagram
     Document <|-- HostnameDocument
     class Document {
         +string name
-        +string url
     }
 ```

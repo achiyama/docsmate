@@ -9,6 +9,7 @@ export class Documents {
   private _documents: DocumentBase[];
 
   constructor() {
+    // 設定ファイルからドキュメントを生成する
     this._documents = documents;
   }
 
@@ -17,9 +18,9 @@ export class Documents {
    * @param url
    * @returns
    */
-  getByUrl(url: URL): DocumentBase {
+  getByUrl(url: URL): DocumentBase | undefined {
+    console.warn(url);
     const document = this._documents.find((document) => document.isSame(url));
-    if (!document) throw new Error("ドキュメントが見つかりませんでした。");
     return document;
   }
 

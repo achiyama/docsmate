@@ -2,6 +2,9 @@
  * ホスト名
  */
 export class Hostname {
+  /**
+   * ホスト名
+   */
   private _value: string;
 
   constructor(value: string) {

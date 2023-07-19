@@ -3,6 +3,9 @@ import { DocumentBase } from "./document";
 import type { RegexRule } from "./regex-rule";
 import type { Hostname } from "./urls/hostname";
 
+/**
+ * 正規表現ドキュメント
+ */
 export class RegexDocument extends DocumentBase {
   /**
    * 正規表現ルール
