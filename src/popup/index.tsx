@@ -2,6 +2,7 @@ import githubMark from "data-base64:~assets/github-mark.png";
 
 import "../main.css";
 
+import { Header } from "~components/header";
 import Icon from "~components/images/icon";
 import { useGetCurrentPage } from "~hooks/getCurrentPage";
 import { useTranslatePage } from "~hooks/translatePage";
@@ -16,8 +17,9 @@ function IndexPopup() {
 
   return (
     <>
-      <div>
-        <select className="mb-1 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">
+      <Header></Header>
+      <div className="p-2">
+        <select className="mb-1 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-teal-500 block w-full p-2.5 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-teal-500 dark:focus:border-teal-500">
           <option value="ja">日本語</option>
           <option value="en">English</option>
         </select>

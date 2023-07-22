@@ -5,20 +5,18 @@ import { useEffect, useRef, useState } from "react";
  * @returns のURL
  */
 export const useGetCurrentPage = () => {
-  const [url, setUrl] = useState<URL>();
+  const [currentUrl, setCurrentUrl] = useState<string>();
 
   useEffect(() => {
-    console.log("useEffect");
     const getCurrentUrl = async () => {
       const tabs = await chrome.tabs.query({
         active: true,
         currentWindow: true
       });
-      console.log(`現在開いているURL: ${tabs[0].url}`);
-      const currentUrl = new URL(tabs[0].url!);
-      setUrl(currentUrl);
+      setCurrentUrl(tabs[0].url!);
     };
     getCurrentUrl();
-  });
-  return url!;
+  }, [currentUrl]);
+
+  return currentUrl!;
 };
