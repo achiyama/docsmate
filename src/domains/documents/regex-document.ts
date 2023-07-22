@@ -1,6 +1,6 @@
 import type { Language } from "../languages/language";
 import { DocumentBase } from "./document";
-import type { RegexRule } from "./regex-rule";
+import type { RegexRule } from "./rules/regex-rule";
 import type { Hostname } from "./urls/hostname";
 
 /**

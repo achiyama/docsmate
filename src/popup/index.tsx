@@ -9,11 +9,10 @@ import { useTranslatePage } from "~hooks/translatePage";
 import SwitchButtons from "./switch-buttons";
 
 function IndexPopup() {
-  // const [data, setData] = useState("");
   const url = useGetCurrentPage();
   console.log(url);
-  const translatedUrl = useTranslatePage(url);
-  console.log(translatedUrl);
+  // const translatedUrl = useTranslatePage(url);
+  // console.log(translatedUrl);
 
   return (
     <>

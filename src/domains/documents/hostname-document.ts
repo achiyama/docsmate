@@ -1,5 +1,5 @@
 import { DocumentBase } from "./document";
-import type { HostnameRule } from "./hostname-rule";
+import type { HostnameRule } from "./rules/hostname-rule";
 
 /**
  * ホスト名ドキュメント

@@ -1,6 +1,6 @@
 import { HostnameDocument } from "~domains/documents/hostname-document";
 import { RegexDocument } from "~domains/documents/regex-document";
-import { RegexRule } from "~domains/documents/regex-rule";
+import { RegexRule } from "~domains/documents/rules/regex-rule";
 import { Hostname } from "~domains/documents/urls/hostname";
 
 import { DocumentBase } from "../domains/documents/document";

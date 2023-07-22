@@ -1,7 +1,7 @@
 import type { Language } from "~domains/languages/language";
 
+import type { Hostname } from "../urls/hostname";
 import type { RuleBase } from "./rule-base";
-import type { Hostname } from "./urls/hostname";
 
 export class HostnameRule implements RuleBase {
   /**
