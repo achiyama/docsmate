@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
  * @returns のURL
  */
 export const useGetCurrentPage = () => {
-  const [currentUrl, setCurrentUrl] = useState<string>();
+  const [currentUrl, setCurrentUrl] = useState<URL>();
 
   useEffect(() => {
     const getCurrentUrl = async () => {
@@ -13,10 +13,12 @@ export const useGetCurrentPage = () => {
         active: true,
         currentWindow: true
       });
-      setCurrentUrl(tabs[0].url!);
+      setCurrentUrl(new URL(tabs[0].url!));
     };
     getCurrentUrl();
-  }, [currentUrl]);
+  }, []);
+
+  if (!currentUrl) throw new Error("URLが取得できませんでした");
 
   return currentUrl!;
 };
