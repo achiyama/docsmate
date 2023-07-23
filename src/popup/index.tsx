@@ -1,19 +1,20 @@
-import githubMark from "data-base64:~assets/github-mark.png";
-
 import "../main.css";
 
+import { Footer } from "~components/footer";
 import { Header } from "~components/header";
-import Icon from "~components/images/icon";
-import { useGetCurrentPage } from "~hooks/getCurrentPage";
-import { useTranslatePage } from "~hooks/translatePage";
+import { documents } from "~configs/documents";
+import { Documents } from "~domains/documents/documents";
+import { useGetCurrentUrl } from "~hooks/getCurrentUrl";
 
 import SwitchButtons from "./switch-buttons";
 
 function IndexPopup() {
-  const url = useGetCurrentPage();
-  console.log(`URL取得します: ${url}`);
-  // const translatedUrl = useTranslatePage(url);
-  // console.log(translatedUrl);
+  const currentUrl = useGetCurrentUrl();
+  if (!currentUrl) return;
+  const documents = new Documents();
+  const document = documents.getByUrl(currentUrl);
+
+  console.log(document);
 
   return (
     <>
@@ -26,11 +27,8 @@ function IndexPopup() {
         {/* <input onChange={(e) => setData(e.target.value)} value={data} /> */}
         {/* <button onClick={hello}>言語切替</button> */}
         <SwitchButtons url={"sa"}></SwitchButtons>
-        <div className="flex">
-          <Icon url="https://github.com/achiyama/docsmate" src={githubMark} />
-        </div>
-        {/* {} */}
       </div>
+      <Footer></Footer>
     </>
   );
 }

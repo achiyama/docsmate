@@ -1,10 +1,10 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 /**
  * 現在開いているぺージのURLを取得する
  * @returns のURL
  */
-export const useGetCurrentPage = () => {
+export const useGetCurrentUrl = () => {
   const [currentUrl, setCurrentUrl] = useState<URL>();
 
   useEffect(() => {
@@ -18,7 +18,5 @@ export const useGetCurrentPage = () => {
     getCurrentUrl();
   }, []);
 
-  if (!currentUrl) throw new Error("URLが取得できませんでした");
-
-  return currentUrl!;
+  return currentUrl;
 };

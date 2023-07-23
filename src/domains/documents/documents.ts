@@ -18,7 +18,7 @@ export class Documents {
    * @param url
    * @returns
    */
-  getByUrl(url: URL): DocumentBase | undefined {
+  getByUrl(url: URL) {
     console.warn(url);
     const document = this._documents.find((document) => document.isSame(url));
     return document;
