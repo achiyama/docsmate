@@ -4,6 +4,7 @@ export const SwitchButton = (props: {
   url: string;
 }) => {
   const open = () => {
+    console.log("call SwitchButton open", props.url);
     switch (props.type) {
       case 1:
         chrome.tabs.update({ url: props.url });
