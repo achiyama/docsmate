@@ -7,21 +7,24 @@ import { Documents } from "~domains/documents/documents";
 import { useGetCurrentUrl } from "~hooks/getCurrentUrl";
 
 import SwitchButtons from "./switch-buttons";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 function IndexPopup() {
-  // const currentUrl = useGetCurrentUrl();
-  // if (!currentUrl) return;
-  // const documents = new Documents();
-  // const document = documents.getByUrl(currentUrl);
+  const urlRef = useRef("");
 
-  // console.log(document);
-
+  // プルダウンの値を取得
   const [selected, setSelected] = useState("ja");
   const handleChange = (event: any) => {
     setSelected(event.target.value);
   };
   console.log(selected);
+
+  // 現在のURLを取得し、「ja-jp」を「en-us」に単純に変換
+  const currentUrl = useGetCurrentUrl();
+  if (currentUrl){
+    urlRef.current = currentUrl.href.replace(/\/ja-jp\//, '/en-us/');
+    console.log("ref", urlRef.current);
+  }
 
   return (
     <>
@@ -36,7 +39,7 @@ function IndexPopup() {
         </select>
         {/* <input onChange={(e) => setData(e.target.value)} value={data} /> */}
         {/* <button onClick={hello}>言語切替</button> */}
-        <SwitchButtons url={"sa"}></SwitchButtons>
+        <SwitchButtons url={urlRef.current}></SwitchButtons>
       </div>
       <Footer></Footer>
     </>
