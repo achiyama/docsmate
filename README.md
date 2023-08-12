@@ -4,10 +4,10 @@
 ## 開発方法
 開発サーバの起動
 ```bash
-# pnpmの場合
+# pnpm の場合
 pnpm dev
 
-# npmの場合
+# npm の場合
 npm run dev
 ```
 
