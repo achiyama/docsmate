@@ -2,7 +2,7 @@
 本プロジェクトの実行には[fnm](https://github.com/Schniz/fnm)をおすすめします。
 
 ## 開発方法
-#### 1. 開発サーバの起動
+#### 開発サーバの起動
 ```bash
 # pnpm の場合
 pnpm dev
@@ -10,7 +10,7 @@ pnpm dev
 # npm の場合
 npm run dev
 ```
-#### 2. 拡張機能の登録
+#### 拡張機能の登録
 Google Chromeの拡張機能->拡張機能を管理を選択し、docsmate\build\chrome-mv3-devのディレクトリを選択する
 ![image](https://github.com/achiyama/docsmate/assets/22658057/8a383178-62bc-4013-8fb2-c495482525ff)
 
