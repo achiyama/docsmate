@@ -1,4 +1,4 @@
-# DocsMate : A document language switcher for developers. 🐶
+## DocsMate : A document language switcher for developers. 🐶
 
 ## 環境構築
 本プロジェクトの実行には[fnm](https://github.com/Schniz/fnm)をおすすめします。
