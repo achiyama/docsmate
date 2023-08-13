@@ -1,3 +1,5 @@
+# DocsMate : A document language switcher for developers. 🐶
+
 ## 環境構築
 本プロジェクトの実行には[fnm](https://github.com/Schniz/fnm)をおすすめします。
 
@@ -6,7 +8,6 @@
 ```bash
 # pnpm の場合
 pnpm dev
-
 # npm の場合
 npm run dev
 ```
