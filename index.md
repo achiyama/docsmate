@@ -63,7 +63,7 @@ LocalStorage には保存期間が存在しないためデータの保存期間�
 
 拡張機能、又は個人情報の取扱いに関しては、下記のメールアドレスにてお問い合わせください。
 
-メールアドレス：kohei.akiyama73@gmail.com
+メールアドレス：kohei.akiyama@outlook.jp
 
 ## 策定日
 
