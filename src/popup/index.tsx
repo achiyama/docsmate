@@ -8,7 +8,7 @@ import { useGetCurrentUrl } from "~hooks/getCurrentUrl";
 
 import SwitchButtons from "./switch-buttons";
 
-function IndexPopup() {
+const IndexPopup = () => {
   const currentUrl = useGetCurrentUrl();
   if (!currentUrl) return;
   const documents = new Documents();
@@ -31,6 +31,6 @@ function IndexPopup() {
       <Footer></Footer>
     </>
   );
-}
+};
 
 export default IndexPopup;
