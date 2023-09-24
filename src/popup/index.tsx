@@ -1,5 +1,7 @@
 import "../main.css";
 
+import { useState } from "react";
+
 import { Footer } from "~components/footer";
 import { Header } from "~components/header";
 import { documents } from "~configs/documents";
@@ -8,9 +10,12 @@ import { useGetCurrentUrl } from "~hooks/getCurrentUrl";
 
 import SwitchButtons from "./switch-buttons";
 
-const IndexPopup = () => {
+export const IndexPopup = () => {
   const currentUrl = useGetCurrentUrl();
   if (!currentUrl) return;
+
+  const [url, setUrl] = useState<URL>(currentUrl);
+
   const documents = new Documents();
   const document = documents.getByUrl(currentUrl);
 
@@ -32,5 +37,3 @@ const IndexPopup = () => {
     </>
   );
 };
-
-export default IndexPopup;
