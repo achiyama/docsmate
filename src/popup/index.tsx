@@ -1,5 +1,7 @@
 import "../main.css";
 
+import { useState } from "react";
+
 import { Footer } from "~components/footer";
 import { Header } from "~components/header";
 import { documents } from "~configs/documents";
@@ -9,7 +11,7 @@ import { useGetCurrentUrl } from "~hooks/getCurrentUrl";
 import SwitchButtons from "./switch-buttons";
 import { useRef, useState } from "react";
 
-function IndexPopup() {
+const IndexPopup = () => {
   const urlRef = useRef("");
 
   // プルダウンの値を取得
@@ -44,6 +46,6 @@ function IndexPopup() {
       <Footer></Footer>
     </>
   );
-}
+};
 
 export default IndexPopup;
