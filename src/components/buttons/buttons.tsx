@@ -5,21 +5,20 @@ import { useBrowsertStore } from "~stores/browser.store"
 export const Buttons = () => {
   const fetchCurrentUrl = useBrowsertStore((state) => state.fetchCurrentUrl)
   const currentUrl = useBrowsertStore((state) => state.currentUrl)
+  fetchCurrentUrl()
 
   const openCurrentTab = useOpenTab({
-    url: "https://www.youtube.com/watch?v=TQs2svOTiaQ",
+    url: currentUrl,
     type: "currentTab"
   })
   const openNewTab = useOpenTab({
-    url: "https://www.youtube.com/watch?v=TQs2svOTiaQ",
+    url: currentUrl,
     type: "newTab"
   })
   const openNewWindow = useOpenTab({
-    url: "https://www.youtube.com/watch?v=TQs2svOTiaQ",
+    url: currentUrl,
     type: "newWindow"
   })
-
-  fetchCurrentUrl()
 
   console.info(`[Current URL]: ${currentUrl}`)
 
