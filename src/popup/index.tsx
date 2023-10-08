@@ -8,8 +8,6 @@ import { useIndexStore } from "./index.store"
 
 const IndexPopup = () => {
   const bears = useIndexStore((state) => state.bears)
-  const increasePopulation = useIndexStore((state) => state.increasePopulation)
-  const removeAllBears = useIndexStore((state) => state.removeAllBears)
   const fetchCurrentUrl = useBrowsertStore((state) => state.fetchCurrentUrl)
   const currentUrl = useBrowsertStore((state) => state.currentUrl)
 
@@ -30,13 +28,16 @@ const IndexPopup = () => {
 
   return (
     <div>
-      <h1 className="text-3xl font-bold underline">{bears} around here ...</h1>
-      <p>{currentUrl}</p>
-      <button onClick={increasePopulation}>Add</button>
-      <button onClick={removeAllBears}>DeleteAll</button>
-      <Button buttonName="Current Tab" onClick={openCurrentTab}></Button>
-      <Button buttonName="New Tab" onClick={openNewTab}></Button>
-      <Button buttonName="New Window" onClick={openNewWindow}></Button>
+      <div className="dt-bg-slate-300">{currentUrl}</div>
+      <div className="dt-m-1">
+        <Button buttonName="Current Tab" onClick={openCurrentTab}></Button>
+      </div>
+      <div className="dt-m-1">
+        <Button buttonName="New Tab" onClick={openNewTab}></Button>
+      </div>
+      <div className="dt-m-1">
+        <Button buttonName="New Window" onClick={openNewWindow}></Button>
+      </div>
     </div>
   )
 }
