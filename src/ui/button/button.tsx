@@ -1,8 +1,14 @@
-export const Button = ({ url: string }) => {
+type ButtonProps = {
+  buttonName: string
+  onClick: () => void
+}
+
+export const Button = (params: ButtonProps) => {
   return (
-    <div>
-      <h1>Button</h1>
-      <button onClick={() => console.log("clicked")}>Click me</button>
-    </div>
+    <>
+      <button onClick={params.onClick} className="">
+        {params.buttonName}
+      </button>
+    </>
   )
 }
