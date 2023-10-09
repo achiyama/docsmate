@@ -11,6 +11,7 @@ const setShortcut = () => {
   // 「Shift+f」で「Foo!!」が出力されるように設定
   useShortcut({
     key: "F",
+    altKey: true,
     shiftKey: true,
     onKeyDown: () => console.log("Foo!!"),
   });
