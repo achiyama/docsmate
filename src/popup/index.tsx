@@ -7,7 +7,7 @@ import { Status } from "~components/status"
 
 const IndexPopup = () => {
   return (
-    <div className="dt-w-[250px]">
+    <div className="dt-w-[200px] dt-bg-gray-50">
       <Status valid={true} siteName="Microsoft Docs"></Status>
       <Buttons></Buttons>
       <Footer></Footer>

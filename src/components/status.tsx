@@ -5,7 +5,7 @@ type StatusProps = {
 
 export const Status = (props: StatusProps) => {
   return (
-    <div className="dt-p-1 dt-flex dt-items-center">
+    <div className="dt-py-1 dt-px-2 dt-flex dt-items-center dt-text-center">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
@@ -18,7 +18,9 @@ export const Status = (props: StatusProps) => {
           clipRule="evenodd"
         />
       </svg>
-      <div className="dt-text-base">{props.siteName}</div>
+      <div className="dt-text-base dt-grow dt-font-bold dt-text-gray-600">
+        {props.siteName}
+      </div>
     </div>
   )
 }
