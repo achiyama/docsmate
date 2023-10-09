@@ -1,6 +1,11 @@
 import React from "react"
 
-export const Icon = (props: { url: string; src: string }) => {
+type IconProps = {
+  url: string
+  src: string
+}
+
+export const Icon = (props: IconProps) => {
   return (
     <a href={props.url} target="_blank">
       <img src={props.src} style={{ width: "16px" }} />
