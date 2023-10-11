@@ -3,7 +3,7 @@ import { useOpenTab } from "@/hooks/useOpenCurrentTab";
 import { useBrowsertStore } from "@/stores/browser.store";
 
 export const Buttons = () => {
-  const currentUrl = useBrowsertStore((state) => state.currentUrl);
+  const currentUrl = useBrowsertStore((state) => state.currentPage?.url);
 
   const openCurrentTab = useOpenTab({
     url: currentUrl,

@@ -6,13 +6,15 @@ import { useBrowsertStore } from "@/stores/browser.store";
 import "../main.css";
 
 const IndexPopup = () => {
-  const fetchCurrentUrl = useBrowsertStore((state) => state.fetchCurrentUrl);
+  const fetchCurrentUrl = useBrowsertStore((state) => state.fetchCurrentPage);
   fetchCurrentUrl();
 
   return (
-    <div className="dt-w-[200px] dt-bg-gray-50">
-      <Status valid={true} siteName="This Page is Invalid"></Status>
-      <Buttons></Buttons>
+    <div className="dt-w-[200px] dt-border-t-8 dt-border-blue-300">
+      <div>
+        <Status valid={false} siteName="This Page is Invalid"></Status>
+        <Buttons></Buttons>
+      </div>
       <Footer></Footer>
     </div>
   );
