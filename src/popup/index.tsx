@@ -1,10 +1,7 @@
-import { Footer } from "~components/footer";
-
-import "../main.css";
-
-import { Buttons } from "~components/buttons/buttons";
-import { Status } from "~components/status";
-import { useBrowsertStore } from "~stores/browser.store";
+import { Buttons } from "@/components/buttons/buttons";
+import { Footer } from "@/components/footer";
+import { Status } from "@/components/status";
+import { useBrowsertStore } from "@/stores/browser.store";
 
 const IndexPopup = () => {
   const fetchCurrentUrl = useBrowsertStore((state) => state.fetchCurrentUrl);

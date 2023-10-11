@@ -1,6 +1,6 @@
-import { Button } from "~components/button/button";
-import { useOpenTab } from "~hooks/useOpenCurrentTab";
-import { useBrowsertStore } from "~stores/browser.store";
+import { Button } from "@/components/button/button";
+import { useOpenTab } from "@/hooks/useOpenCurrentTab";
+import { useBrowsertStore } from "@/stores/browser.store";
 
 export const Buttons = () => {
   const currentUrl = useBrowsertStore((state) => state.currentUrl);
