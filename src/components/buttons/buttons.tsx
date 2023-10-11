@@ -1,26 +1,24 @@
-import { Button } from "~components/button/button"
-import { useOpenTab } from "~hooks/useOpenCurrentTab"
-import { useBrowsertStore } from "~stores/browser.store"
+import { Button } from "~components/button/button";
+import { useOpenTab } from "~hooks/useOpenCurrentTab";
+import { useBrowsertStore } from "~stores/browser.store";
 
 export const Buttons = () => {
-  const fetchCurrentUrl = useBrowsertStore((state) => state.fetchCurrentUrl)
-  const currentUrl = useBrowsertStore((state) => state.currentUrl)
-  fetchCurrentUrl()
+  const currentUrl = useBrowsertStore((state) => state.currentUrl);
 
   const openCurrentTab = useOpenTab({
     url: currentUrl,
     type: "currentTab"
-  })
+  });
   const openNewTab = useOpenTab({
     url: currentUrl,
     type: "newTab"
-  })
+  });
   const openNewWindow = useOpenTab({
     url: currentUrl,
     type: "newWindow"
-  })
+  });
 
-  console.info(`[Current URL]: ${currentUrl}`)
+  console.info(`[Current URL]: ${currentUrl}`);
 
   return (
     <>
@@ -34,5 +32,5 @@ export const Buttons = () => {
         <Button buttonName="New Window" onClick={openNewWindow}></Button>
       </div>
     </>
-  )
-}
+  );
+};

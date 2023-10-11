@@ -11,6 +11,5 @@ export const useBrowsertStore = create<BrowserState>((set) => ({
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
       set({ currentUrl: tabs[0].url });
     });
-  },
-  swtichUrl: () => {}
+  }
 }));
