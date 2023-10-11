@@ -3,6 +3,8 @@ import { Footer } from "@/components/footer";
 import { Status } from "@/components/status";
 import { useBrowsertStore } from "@/stores/browser.store";
 
+import "../main.css";
+
 const IndexPopup = () => {
   const fetchCurrentUrl = useBrowsertStore((state) => state.fetchCurrentUrl);
   fetchCurrentUrl();
