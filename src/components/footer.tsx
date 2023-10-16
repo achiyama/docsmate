@@ -1,6 +1,6 @@
 import githubMark from "data-base64:../../assets/github-mark.png";
 
-import { Icon } from "./Icon";
+import { Icon } from "./icon";
 
 export const Footer = () => {
   return (
