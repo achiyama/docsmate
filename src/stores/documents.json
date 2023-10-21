@@ -1,0 +1,83 @@
+{
+  "regex": [
+    {
+      "name": "Microsoft Learn",
+      "domain": "learn.microsoft.com",
+      "regex": "(?<=learn.microsoft.com/).+?(?=\/)",
+      "languges:": [
+        {
+          "displayName": "English (United States)",
+          "domain": "learn.microsoft.com",
+          "replacement": "en-us"
+        },
+        {
+          "displayName": "English (United Kingdom)",
+          "domain": "learn.microsoft.com",
+          "replacement": "en-gb"
+        },
+        {
+          "displayName": "Español (España)",
+          "domain": "learn.microsoft.com",
+          "replacement": "es-es"
+        },
+        {
+          "displayName": "Français (France)",
+          "domain": "learn.microsoft.com",
+          "replacement": "fr-fr"
+        },
+        {
+          "displayName": "Italiano (Italia)",
+          "domain": "learn.microsoft.com",
+          "replacement": "it-it"
+        },
+        {
+          "displayName": "Português (Brasil)",
+          "domain": "learn.microsoft.com",
+          "replacement": "pt-br"
+        },
+        {
+          "displayName": "Русский (Россия)",
+          "domain": "learn.microsoft.com",
+          "replacement": "ru-ru"
+        },
+        {
+          "displayName": "中文 (中国)",
+          "domain": "learn.microsoft.com",
+          "replacement": "zh-cn"
+        },
+        {
+          "displayName": "日本語 (日本)",
+          "domain": "learn.microsoft.com",
+          "replacement": "ja-jp"
+        }
+      ]
+    }
+  ],
+  "hostname": [
+    {
+      "name": "Angular docs",
+      "languges:": [
+        {
+          "displayName": "English",
+          "domain": "angular.io"
+        },
+        {
+          "displayName": "日本語",
+          "domain": "angular.jp"
+        },
+        {
+          "displayName": "简体中文",
+          "domain": "angular.cn"
+        },
+        {
+          "displayName": "繁體中文",
+          "domain": "angular.tw"
+        },
+        {
+          "displayName": "한국어",
+          "domain": "angular.kr"
+        }
+      ]
+    }
+  ]
+}

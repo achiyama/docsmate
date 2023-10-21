@@ -16,7 +16,9 @@ pnpm install
 pnpm dev
 ```
 
-### Plasmoを最新化する
+### パッケージを最新化する
+
+Plasmoを最新化する
 
 ```bash
 pnpm up -L plasmo
