@@ -1,4 +1,4 @@
-import { Button } from "@/components/button/Button";
+import { Button } from "@/components/button/button";
 import { useOpenTab } from "@/hooks/useOpenCurrentTab";
 import { useBrowsertStore } from "@/stores/browser.store";
 

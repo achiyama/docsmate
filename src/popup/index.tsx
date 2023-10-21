@@ -2,9 +2,9 @@ import { useBrowsertStore } from "@/stores/browser.store";
 
 import "../main.css";
 
-import { Buttons } from "@/components/buttons/Buttons";
-import { Footer } from "@/components/Footer";
-import { Status } from "@/components/Status";
+import { Buttons } from "@/components/buttons/buttons";
+import { Footer } from "@/components/footer";
+import { Status } from "@/components/status";
 import { MainLayout } from "@/Layout/MainLayout";
 
 const IndexPopup = () => {

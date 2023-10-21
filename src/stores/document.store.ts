@@ -7,6 +7,7 @@ type DocumentState = {
   isValid: boolean;
   currentDocument?: {
     name: string;
+    supportLanguages: string[];
   };
 };
 
@@ -20,5 +21,20 @@ export const documentStore = createStore<DocumentState>((set) => ({
     const document = documents.regex.find(
       (document) => document.domain === domain
     );
+
+    if (!document) {
+      set({ isValid: false });
+      return;
+    }
+
+    const languages = document["languges:"];
+
+    set({
+      isValid: true,
+      currentDocument: {
+        name: document.name,
+        supportLanguages: languages.map((language) => language.displayName)
+      }
+    });
   }
 }));
