@@ -1,4 +1,4 @@
-import { createStore } from "zustand";
+import { create } from "zustand";
 
 import { useBrowsertStore } from "./browser.store";
 import documents from "./documents.json";
@@ -9,9 +9,10 @@ type DocumentState = {
     name: string;
     supportLanguages: string[];
   };
+  fetchCurrentDocument: () => void;
 };
 
-export const documentStore = createStore<DocumentState>((set) => ({
+export const useDocumentStore = create<DocumentState>((set) => ({
   isValid: false,
   currentDocument: undefined,
   fetchCurrentDocument: () => {
