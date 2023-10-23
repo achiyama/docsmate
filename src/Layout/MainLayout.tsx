@@ -1,3 +1,6 @@
+import { Footer } from "@/components/Footer";
+import { Header } from "@/header/header";
+
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
@@ -9,8 +12,10 @@ type MainLayoutProps = {
 
 export const MainLayout = ({ children }: MainLayoutProps) => {
   return (
-    <div className="dt-w-[200px] dt-border-t-8 dt-border-blue-300">
+    <div className="dt-w-[200px]">
+      <Header />
       {children}
+      <Footer />
     </div>
   );
 };

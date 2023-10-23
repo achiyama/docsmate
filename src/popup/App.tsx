@@ -1,5 +1,4 @@
 import { Buttons } from "@/components/buttons/buttons";
-import { Footer } from "@/components/Footer";
 import { Status } from "@/features/status/components/Status";
 import { MainLayout } from "@/Layout/MainLayout";
 import { useBrowsertStore } from "@/stores/browser.store";
@@ -12,7 +11,6 @@ export const App = () => {
     <MainLayout>
       <Status />
       <Buttons />
-      <Footer />
     </MainLayout>
   );
 };
