@@ -1,4 +1,5 @@
 import { useBrowsertStore } from "@/stores/browser.store";
+import { useDocumentStore } from "@/stores/document.store";
 
 import { SVGIcon } from "./svg/svg-icon";
 
@@ -8,10 +9,13 @@ type StatusProps = {
 };
 
 export const Status = (props: StatusProps) => {
+  const isValid = useDocumentStore((state) => state.isValid);
+  const currentDocument = useDocumentStore((state) => state.currentDocument);
+
   return (
     <div className="dt-w-full">
-      {props.valid ? (
-        <ValidStatus siteName={props.siteName}></ValidStatus>
+      {isValid ? (
+        <ValidStatus siteName={currentDocument.name}></ValidStatus>
       ) : (
         <InvalidStatus></InvalidStatus>
       )}
