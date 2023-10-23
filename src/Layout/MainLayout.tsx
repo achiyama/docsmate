@@ -1,10 +1,5 @@
-import { Footer } from "@/components/Footer";
-import { Header } from "@/header/header";
-
-import "@fontsource/roboto/300.css";
-import "@fontsource/roboto/400.css";
-import "@fontsource/roboto/500.css";
-import "@fontsource/roboto/700.css";
+import { Footer } from "@/components/footer/Footer";
+import { Header } from "@/components/header/Header";
 
 type MainLayoutProps = {
   children: React.ReactNode;
