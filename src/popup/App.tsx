@@ -1,6 +1,6 @@
 import { Buttons } from "@/components/buttons/buttons";
-import { Footer } from "@/components/footer";
-import { Status } from "@/components/status";
+import { Footer } from "@/components/Footer";
+import { Status } from "@/features/status/Status";
 import { MainLayout } from "@/Layout/MainLayout";
 import { useBrowsertStore } from "@/stores/browser.store";
 
@@ -10,10 +10,8 @@ export const App = () => {
 
   return (
     <MainLayout>
-      <div>
-        <Status valid={false} siteName="This Page is Invalid" />
-        <Buttons />
-      </div>
+      <Status />
+      <Buttons />
       <Footer />
     </MainLayout>
   );
