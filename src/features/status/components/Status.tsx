@@ -1,7 +1,7 @@
 import { useDocumentStore } from "@/stores/document.store";
 
-import { InvalidStatus } from "./components/InvalidStatus";
-import { ValidStatus } from "./components/ValidStatus";
+import { InvalidStatus } from "./InvalidStatus";
+import { ValidStatus } from "./ValidStatus";
 
 export const Status = () => {
   const isValid = useDocumentStore((state) => state.isValid);

@@ -1,6 +1,6 @@
 import { Buttons } from "@/components/buttons/buttons";
 import { Footer } from "@/components/Footer";
-import { Status } from "@/features/status/Status";
+import { Status } from "@/features/status/components/Status";
 import { MainLayout } from "@/Layout/MainLayout";
 import { useBrowsertStore } from "@/stores/browser.store";
 
