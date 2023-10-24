@@ -1,4 +1,4 @@
-import githubMark from "data-base64:../../assets/github-mark.png";
+import githubMark from "data-base64:@/../assets/github-mark.png";
 
 import { Icon } from "../icon";
 
