@@ -1,25 +1,14 @@
-import { useBrowsertStore } from "@/stores/browser.store";
-
 import "../main.css";
 
-import { Buttons } from "@/components/buttons/Buttons";
-import { Footer } from "@/components/Footer";
-import { Status } from "@/components/Status";
-import { MainLayout } from "@/Layout/MainLayout";
+import { App } from "./App";
+
+import "@fontsource/roboto/300.css";
+import "@fontsource/roboto/400.css";
+import "@fontsource/roboto/500.css";
+import "@fontsource/roboto/700.css";
 
 const IndexPopup = () => {
-  const fetchCurrentUrl = useBrowsertStore((state) => state.fetchCurrentPage);
-  fetchCurrentUrl();
-
-  return (
-    <MainLayout>
-      <div>
-        <Status valid={false} siteName="This Page is Invalid" />
-        <Buttons />
-      </div>
-      <Footer />
-    </MainLayout>
-  );
+  return <App></App>;
 };
 
 export default IndexPopup;

@@ -10,7 +10,12 @@
     "test": "plasmo test"
   },
   "dependencies": {
-    "plasmo": "0.83.0",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@fontsource/roboto": "^5.0.8",
+    "@mui/icons-material": "^5.14.14",
+    "@mui/material": "^5.14.14",
+    "plasmo": "0.84.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "zustand": "^4.4.3"

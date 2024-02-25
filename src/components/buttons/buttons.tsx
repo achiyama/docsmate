@@ -1,9 +1,9 @@
-import { Button } from "@/components/button/Button";
 import { useOpenTab } from "@/hooks/useOpenCurrentTab";
-import { useBrowsertStore } from "@/stores/browser.store";
+import { useBrowserStore } from "@/stores/browser.store";
+import Button from "@mui/material/Button";
 
 export const Buttons = () => {
-  const currentUrl = useBrowsertStore((state) => state.currentPage?.url);
+  const currentUrl = useBrowserStore((state) => state.currentPage?.url);
 
   const openCurrentTab = useOpenTab({
     url: currentUrl,
@@ -23,13 +23,25 @@ export const Buttons = () => {
   return (
     <>
       <div className="dt-m-1">
-        <Button buttonName="Current Tab" onClick={openCurrentTab}></Button>
+        <Button
+          className="dt-w-full"
+          variant="outlined"
+          onClick={openCurrentTab}>
+          Current Tab
+        </Button>
       </div>
       <div className="dt-m-1">
-        <Button buttonName="New Tab" onClick={openNewTab}></Button>
+        <Button className="dt-w-full" variant="outlined" onClick={openNewTab}>
+          New Tab
+        </Button>
       </div>
       <div className="dt-m-1">
-        <Button buttonName="New Window" onClick={openNewWindow}></Button>
+        <Button
+          className="dt-w-full"
+          variant="outlined"
+          onClick={openNewWindow}>
+          New Window
+        </Button>
       </div>
     </>
   );
