@@ -1,6 +1,6 @@
 import { create } from "zustand";
 
-import { useBrowsertStore } from "./browser.store";
+import { useBrowserStore } from "./browser.store";
 import documents from "./documents.json";
 
 type DocumentState = {
@@ -16,7 +16,7 @@ export const useDocumentStore = create<DocumentState>((set) => ({
   isValid: false,
   currentDocument: undefined,
   fetchCurrentDocument: () => {
-    const browserStore = useBrowsertStore();
+    const browserStore = useBrowserStore();
     const domain = browserStore.currentPage.domain;
 
     const document = documents.regex.find(

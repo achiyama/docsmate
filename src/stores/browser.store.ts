@@ -9,7 +9,7 @@ type BrowserState = {
   fetchCurrentPage: () => void;
 };
 
-export const useBrowsertStore = create<BrowserState>((set) => ({
+export const useBrowserStore = create<BrowserState>((set) => ({
   currentUrl: undefined,
   fetchCurrentPage: () => {
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {

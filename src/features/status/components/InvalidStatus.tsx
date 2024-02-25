@@ -1,10 +1,10 @@
 import { SVGIcon } from "@/components/svg/svg-icon";
-import { useBrowsertStore } from "@/stores/browser.store";
+import { useBrowserStore } from "@/stores/browser.store";
 
 type InvalidStatusProps = {};
 
 export const InvalidStatus = (props: InvalidStatusProps) => {
-  const domain = useBrowsertStore((state) => state.currentPage?.domain);
+  const domain = useBrowserStore((state) => state.currentPage?.domain);
 
   return (
     <>

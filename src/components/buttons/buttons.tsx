@@ -1,9 +1,9 @@
 import { useOpenTab } from "@/hooks/useOpenCurrentTab";
-import { useBrowsertStore } from "@/stores/browser.store";
+import { useBrowserStore } from "@/stores/browser.store";
 import Button from "@mui/material/Button";
 
 export const Buttons = () => {
-  const currentUrl = useBrowsertStore((state) => state.currentPage?.url);
+  const currentUrl = useBrowserStore((state) => state.currentPage?.url);
 
   const openCurrentTab = useOpenTab({
     url: currentUrl,

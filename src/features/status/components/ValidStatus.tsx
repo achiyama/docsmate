@@ -1,12 +1,12 @@
 import { SVGIcon } from "@/components/svg/svg-icon";
-import { useBrowsertStore } from "@/stores/browser.store";
+import { useBrowserStore } from "@/stores/browser.store";
 
 type ValidStatusProps = {
   siteName: string;
 };
 
 export const ValidStatus = (props: ValidStatusProps) => {
-  const domain = useBrowsertStore((state) => state.currentPage?.domain);
+  const domain = useBrowserStore((state) => state.currentPage?.domain);
 
   return (
     <>
